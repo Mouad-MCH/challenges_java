@@ -1,15 +1,28 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Main6 {
     public static void main(String[] args) {
-        int[] mynum = {1, 2, 3, 4, 5};
-        List<Integer> arr = new ArrayList<>();
-        int n = 3;
-        for(int i = n; i < mynum.length; i++ ) {
-            arr.add(mynum[i]);
-
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        rotateArray(arr, 4);
+        System.out.println(Arrays.toString(arr)); // [5, 6, 7, 1, 2, 3, 4]
+    }
+    
+    public static void rotateArray(int[] arr, int k) {
+        int n = arr.length;
+        k = k % n;
+        
+        reverse(arr, 0, n - 1);
+        reverse(arr, 0, k - 1);
+        reverse(arr, k, n - 1);
+    }
+    
+    private static void reverse(int[] arr, int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
         }
-        System.out.println(arr);
     }
 }
