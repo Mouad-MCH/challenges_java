@@ -11,7 +11,7 @@ public class Main3 {
                 System.out.println("Trop petit ! Essayez encore.");
             }else {
 
-                System.out.println("tree grond ! Essayez encore.");
+                System.out.println("Trop volumineux ! Essayez encore.");
             }
 
             System.out.println("Devinez le nombre : ");
